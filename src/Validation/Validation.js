@@ -1,13 +1,15 @@
 import React from 'react';
 
 const validation = (props) => {
+    let validationMessage = 'Text long enough';
+
+    if (props.inputLength <= 5) {
+        validationMessage = 'Text to Short';
+    }
+
     return (
         <div> 
-            {
-                props.inputLength > 5 ?
-                    <p>Text long enough, length = {props.inputLength}</p> :
-                    <p>Text to Short, length = {props.inputLength}</p>
-            }
+            <p>{validationMessage}, length = {props.inputLength}</p> :
         </div>
 
     )
